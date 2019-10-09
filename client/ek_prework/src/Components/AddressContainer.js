@@ -11,11 +11,13 @@ class AddressContainer extends Component {
         city: '',
         state: '',
         zip: ''
+        // street_name
+        // zip_code
 
     };
 
     componentDidMount() {
-        this.searchApi("151 Battle Green Dr, Rochester, NY, 14624");
+        // this.searchApi("151 Battle Green Dr, Rochester, NY, 14624");
     }
 
     searchApi = query => {
@@ -23,6 +25,7 @@ class AddressContainer extends Component {
         .then(res => this.setState({ result: res.data}))
         .catch(err => console.log(err));
         // console.log(query);
+        // console.log(this.searchApi);
     };
     
 
@@ -59,13 +62,21 @@ class AddressContainer extends Component {
            <h2>API results?</h2>
            <HouseDetail 
            result={this.state.result}
-           street={this.state.result.Street}
-           city={this.state.result.City}
-           state={this.state.result.State}
-           zip={this.state.result.Zip}
+        //    street={this.state.result.street}
+        //    city={this.state.result.city}
+        //    state={this.state.result.state}
+        //    zip={this.state.result.zip_code}
            />
-           
-           
+
+{/* api needs street info to be concatenated, street_number, street_name, street_suffix./ zip_code....all of this under properties object into the addressess object */}
+        {/* fixed ^^^ used a different url that was provided */}
+
+{/* if i remove .result from above then the info that is entered in the form immediatley display under api results */}
+{/* api is being reached/ number of trial hits have been decreasing but noting console logs */}
+{/* CORS? */}
+        {/* installed chrome plugin */}
+    {/* Now getting CORB----read up on this */}
+
         </div>
    
         ) 

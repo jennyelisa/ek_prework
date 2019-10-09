@@ -4,7 +4,17 @@ function Form(props) {
   return (
     <form>
       <div className="form-group">
-        <label htmlFor="street">Street</label>
+      <label htmlFor="search">Search:</label>
+        <input
+          onChange={props.handleInputChange}
+          value={props.search}
+          name="search"
+          type="text"
+          className="form-control"
+          placeholder="Search for a house"
+          id="search"
+        />
+        {/* <label htmlFor="street">Street</label>
         <input
           onChange={props.handleInputChange}
           value={props.street}
@@ -13,7 +23,7 @@ function Form(props) {
           className="form-control"
           placeholder="Street Name"
           id="street"
-        />
+        /> */}
         <label htmlFor="city">City</label>
       <input
         onChange={props.handleInputChange}
@@ -55,3 +65,7 @@ function Form(props) {
   }
 
 export default Form;
+
+
+
+// do i need to use htmlFor="search" to get results back from api

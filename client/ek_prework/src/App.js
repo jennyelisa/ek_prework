@@ -1,15 +1,19 @@
 import React from 'react';
 // import logo from './logo.svg';
 import './App.css';
-import FormBox from "./Components/FormBox/form";
+import Container from './Components/AddressContainer';
+
 
 
 function App() {
   return (
     <div className="App">
-      <FormBox />
+     <Container />
+    
     </div>
+    
   );
+  
 }
 
 export default App;

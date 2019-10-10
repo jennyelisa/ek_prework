@@ -1,10 +1,12 @@
-import axios from "axios";
-const BASEURL = "https://api.estated.com/property/v3?token=";
-const APIKEY = "tkjstSNEY8jb3J6rtkrQpc3LMuBzAZ&conjoined_address=151+Battle+Green+Dr,Rochester,NY+14624";
+import axios from 'axios'
 
 export default {
-  search: function(query) {
-    return axios.get(BASEURL + query + APIKEY);
-  }
+  search: function(data) {
+    const { search, city, state, zip } = data
+    const APIKEY = 'tkjstSNEY8jb3J6rtkrQpc3LMuBzAZ'
+    const baseUrl = `https://api.estated.com/property/v3`
+    const query = `?token=${APIKEY}&address=${search}&city=${city}&state=${state}&zipcode=${zip}`
 
-};
+    return axios.get(baseUrl + query)
+  }
+}
